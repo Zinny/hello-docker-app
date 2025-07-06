@@ -1,8 +1,10 @@
-from http.server import SimpleHTTPRequestHandler, HTTPServer
+from flask import Flask
 
-PORT = 8080
-Handler = SimpleHTTPRequestHandler
+app = Flask(__name__)
 
-with HTTPServer(("", PORT)), Handler) as httpd:
-    print(f"serving on port {PORT}")
-    httpd.serve.forever()
+@app.route("/")
+def hello():
+    return "Hello from Docker!"
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8080)
