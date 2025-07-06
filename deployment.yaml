@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: hello-docker-app
-          image: cinnyabraham06/hello-docker-app:latest
+          image: cinnyabraham06/hello-docker-new-app:latest
           ports:
             - containerPort: 8080
